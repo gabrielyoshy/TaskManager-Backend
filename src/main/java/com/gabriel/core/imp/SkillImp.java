@@ -20,7 +20,7 @@ public class SkillImp implements SkillService {
 		return repositorio.findAll();
 	}
 
-	@Override
+	/*@Override
 	public Skill listId(long id) {
 		// TODO Auto-generated method stub
 		return null;
@@ -42,6 +42,6 @@ public class SkillImp implements SkillService {
 	public Skill delete(long id) {
 		// TODO Auto-generated method stub
 		return null;
-	}
+	}*/
 
 }

@@ -7,9 +7,9 @@ import com.gabriel.core.model.Skill;
 public interface SkillService {
 	
 	List<Skill>list();
-	Skill listId(long id);
+	/*Skill listId(long id);
 	Skill add(Skill s);
 	Skill edit(Skill s);
-	Skill delete(long id);
+	Skill delete(long id);*/
 
 }
