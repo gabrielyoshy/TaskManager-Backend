@@ -6,6 +6,7 @@ import org.springframework.data.repository.Repository;
 
 import com.gabriel.core.model.Skill;
 
+
 public interface SkillRep extends Repository<Skill, Long> {
 	List<Skill>findAll();
 	/*Skill findOne(long id);
