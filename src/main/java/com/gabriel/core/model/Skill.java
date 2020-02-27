@@ -1,17 +1,8 @@
 package com.gabriel.core.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
 
 @Entity
 @Table(name = "Skill")
@@ -20,10 +11,10 @@ public class Skill {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id_skill;
 	
-	@Column(name = "name")
+	@NotBlank
 	private String name;
 	
-	@Column(name = "beschreibung")
+	@NotBlank
 	private String beschreibung;
 	
 	/*@ManyToMany(cascade = CascadeType.ALL, targetEntity = Mitarbeiter.class, fetch = FetchType.LAZY, mappedBy = "skills")
