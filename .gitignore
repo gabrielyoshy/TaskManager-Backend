@@ -32,3 +32,5 @@ build/
 *.gz
 *.log
 *.log
+log/app.log
+log/app.log
