@@ -4,3 +4,59 @@
 2020-02-27 00:58:19.078  INFO 16004 --- [RMI TCP Connection(185)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2020-02-27 00:58:19.109  INFO 16004 --- [RMI TCP Connection(185)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2020-02-27 00:58:19.121  INFO 16004 --- [RMI TCP Connection(185)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-27 11:42:56.879  INFO 4108 --- [main] c.g.core.TaskManagerBackendApplication   : Starting TaskManagerBackendApplication on LAPTOP-79TR9M16 with PID 4108 (C:\Users\gabri\OneDrive\Documentos\Eclipse\workspace\TaskManager-Backend\target\classes started by gabri in C:\Users\gabri\OneDrive\Documentos\Eclipse\workspace\TaskManager-Backend)
+2020-02-27 11:42:56.882  INFO 4108 --- [main] c.g.core.TaskManagerBackendApplication   : No active profile set, falling back to default profiles: default
+2020-02-27 11:42:57.525  INFO 4108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-27 11:42:57.589  INFO 4108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55ms. Found 2 JPA repository interfaces.
+2020-02-27 11:42:57.841  INFO 4108 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-27 11:42:58.094  INFO 4108 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2020-02-27 11:42:58.103  INFO 4108 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 11:42:58.104  INFO 4108 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-27 11:42:58.201  INFO 4108 --- [main] o.a.c.c.C.[.[localhost].[/taskmanager]   : Initializing Spring embedded WebApplicationContext
+2020-02-27 11:42:58.201  INFO 4108 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1272 ms
+2020-02-27 11:42:58.358  INFO 4108 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-27 11:42:58.443  INFO 4108 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-27 11:42:58.602  INFO 4108 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-27 11:42:58.726  INFO 4108 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-27 11:42:58.796  WARN 4108 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-02-27 11:42:59.505  INFO 4108 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-27 11:42:59.521  INFO 4108 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-02-27 11:43:00.949  INFO 4108 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-27 11:43:00.957  INFO 4108 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-27 11:43:01.043  WARN 4108 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-27 11:43:01.384  INFO 4108 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-27 11:43:01.582  INFO 4108 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path '/taskmanager'
+2020-02-27 11:43:01.584  INFO 4108 --- [main] c.g.core.TaskManagerBackendApplication   : Started TaskManagerBackendApplication in 5.111 seconds (JVM running for 6.125)
+2020-02-27 11:47:33.938  INFO 4108 --- [RMI TCP Connection(17)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-02-27 11:47:33.941  INFO 4108 --- [RMI TCP Connection(17)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-27 11:47:33.942  INFO 4108 --- [RMI TCP Connection(17)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-27 11:47:33.944  INFO 4108 --- [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-27 11:47:33.946  INFO 4108 --- [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-27 11:48:11.773  INFO 12784 --- [main] c.g.core.TaskManagerBackendApplication   : Starting TaskManagerBackendApplication on LAPTOP-79TR9M16 with PID 12784 (C:\Users\gabri\OneDrive\Documentos\Eclipse\workspace\TaskManager-Backend\target\classes started by gabri in C:\Users\gabri\OneDrive\Documentos\Eclipse\workspace\TaskManager-Backend)
+2020-02-27 11:48:11.776  INFO 12784 --- [main] c.g.core.TaskManagerBackendApplication   : No active profile set, falling back to default profiles: default
+2020-02-27 11:48:12.174  INFO 12784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-27 11:48:12.215  INFO 12784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35ms. Found 2 JPA repository interfaces.
+2020-02-27 11:48:12.386  INFO 12784 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-27 11:48:12.545  INFO 12784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2020-02-27 11:48:12.551  INFO 12784 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 11:48:12.551  INFO 12784 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-27 11:48:12.612  INFO 12784 --- [main] o.a.c.c.C.[.[localhost].[/taskmanager]   : Initializing Spring embedded WebApplicationContext
+2020-02-27 11:48:12.613  INFO 12784 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 808 ms
+2020-02-27 11:48:12.746  INFO 12784 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-27 11:48:12.791  INFO 12784 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-27 11:48:12.869  INFO 12784 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-27 11:48:12.928  INFO 12784 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-27 11:48:12.929  WARN 12784 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-02-27 11:48:13.470  INFO 12784 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-27 11:48:13.478  INFO 12784 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-02-27 11:48:14.508  INFO 12784 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-27 11:48:14.513  INFO 12784 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-27 11:48:14.571  WARN 12784 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-27 11:48:14.802  INFO 12784 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-27 11:48:14.940  INFO 12784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path '/taskmanager'
+2020-02-27 11:48:14.941  INFO 12784 --- [main] c.g.core.TaskManagerBackendApplication   : Started TaskManagerBackendApplication in 3.411 seconds (JVM running for 4.001)
+2020-02-27 12:11:17.600  INFO 12784 --- [RMI TCP Connection(33)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-02-27 12:11:17.603  INFO 12784 --- [RMI TCP Connection(33)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-27 12:11:17.604  INFO 12784 --- [RMI TCP Connection(33)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-27 12:11:17.606  INFO 12784 --- [RMI TCP Connection(33)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-27 12:11:17.611  INFO 12784 --- [RMI TCP Connection(33)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
