@@ -23,14 +23,20 @@ public class Controller {
 	@Autowired
 	SkillService service;
 	
-	/*@GetMapping
-	public String listar(){
-        return "hola";
-    }*/
+
 	@GetMapping
 	public List<Skill>list(){
 		return service.list();
 	}
 	
+	@PostMapping
+	public Skill add(@RequestBody Skill s){
+		return service.save(s);
+	}
+	/*
+	@PostMapping
+	public String add(@RequestBody String s){
+		return s;
+	}*/
 
 }

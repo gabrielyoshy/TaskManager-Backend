@@ -13,23 +13,22 @@ import com.gabriel.core.service.SkillService;
 public class SkillImp implements SkillService {
 
 	@Autowired
-	private SkillRep repositorio;
+	private SkillRep rep;
 	
 	@Override
 	public List<Skill> list() {
-		return repositorio.findAll();
+		return rep.findAll();
 	}
 
-	/*@Override
-	public Skill listId(long id) {
+	@Override
+	public Skill findOne(long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Skill add(Skill s) {
-		// TODO Auto-generated method stub
-		return null;
+	public Skill save(Skill s) {
+		return rep.save(s);
 	}
 
 	@Override
@@ -42,6 +41,6 @@ public class SkillImp implements SkillService {
 	public Skill delete(long id) {
 		// TODO Auto-generated method stub
 		return null;
-	}*/
+	}
 
 }

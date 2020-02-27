@@ -26,8 +26,8 @@ public class Mitarbeiter {
 	@Column(name = "nachname")
 	private String nachame;
 	
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Skill.class)
-    private List<Skill> skills = new ArrayList<>();
+	/*@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Skill.class)
+    private List<Skill> skills = new ArrayList<>();*/
 
 	public Long getId_mitarbeiter() {
 		return id_mitarbeiter;
@@ -53,13 +53,13 @@ public class Mitarbeiter {
 		this.nachame = nachame;
 	}
 
-	public List<Skill> getSkill() {
+	/*public List<Skill> getSkill() {
 		return skills;
 	}
 
 	public void setSkill(List<Skill> skills) {
 		this.skills = skills;
-	}
+	}*/
 	
 	
 
