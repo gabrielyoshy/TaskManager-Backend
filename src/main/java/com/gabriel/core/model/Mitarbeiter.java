@@ -14,6 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table; 
 
 @Entity
@@ -29,7 +30,7 @@ public class Mitarbeiter implements Serializable {
 	@Column(name = "nachname")
 	private String nachname;
 	
-	@ManyToMany(fetch = FetchType.LAZY,
+	@OneToMany(fetch = FetchType.LAZY,
             cascade = {
                 CascadeType.PERSIST,
                 CascadeType.MERGE

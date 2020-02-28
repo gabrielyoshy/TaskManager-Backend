@@ -11,7 +11,7 @@ import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "Skill")
-public class Skill implements Serializable {
+public class Skill {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id_skill;
@@ -22,13 +22,13 @@ public class Skill implements Serializable {
 	@NotBlank
 	private String beschreibung;
 	
-	@ManyToMany(fetch = FetchType.LAZY,
+	/*@ManyToMany(fetch = FetchType.LAZY,
             cascade = {
                 CascadeType.PERSIST,
                 CascadeType.MERGE
             },
             mappedBy = "skills")
-    private Set<Mitarbeiter> mitarbeiters = new HashSet<>();
+    private Set<Mitarbeiter> mitarbeiters = new HashSet<>();*/
 	
 
 	public Long getId_skill() {
@@ -55,9 +55,14 @@ public class Skill implements Serializable {
 		this.beschreibung = beschreibung;
 	}
 
-	public Set<Mitarbeiter> getMitarbeiter() {
+
+	/*public Set<Mitarbeiter> getMitarbeiters() {
 		return mitarbeiters;
 	}
+
+	public void setMitarbeiters(Set<Mitarbeiter> mitarbeiters) {
+		this.mitarbeiters = mitarbeiters;
+	}*/
 
 
 	
