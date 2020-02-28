@@ -77,7 +77,7 @@ public class Aufgabe {
 		return skill;
 	}
 
-	public void setISkill(Skill skill) {
+	public void setSkill(Skill skill) {
 		this.skill = skill;
 	}
 

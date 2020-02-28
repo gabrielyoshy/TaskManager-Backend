@@ -1,7 +1,10 @@
 package com.gabriel.core.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -15,7 +18,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Mitarbeiter")
-public class Mitarbeiter {
+public class Mitarbeiter implements Serializable {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id_mitarbeiter;
@@ -26,8 +29,12 @@ public class Mitarbeiter {
 	@Column(name = "nachname")
 	private String nachname;
 	
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Skill.class)
-    private List<Skill> skills = new ArrayList<>();
+	@ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                CascadeType.PERSIST,
+                CascadeType.MERGE
+            })
+    private Set<Skill> skills = new HashSet<>();
 
 	public Long getId_mitarbeiter() {
 		return id_mitarbeiter;
@@ -53,11 +60,11 @@ public class Mitarbeiter {
 		this.nachname = nachname;
 	}
 
-	public List<Skill> getSkill() {
+	public Set<Skill> getSkill() {
 		return skills;
 	}
 
-	public void setSkill(List<Skill> skills) {
+	public void setSkill(Set<Skill> skills) {
 		this.skills = skills;
 	}
 	

@@ -1,7 +1,9 @@
 package com.gabriel.core.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -9,7 +11,7 @@ import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "Skill")
-public class Skill {
+public class Skill implements Serializable {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id_skill;
@@ -20,8 +22,13 @@ public class Skill {
 	@NotBlank
 	private String beschreibung;
 	
-	@ManyToMany(cascade = CascadeType.ALL, targetEntity = Mitarbeiter.class, fetch = FetchType.LAZY, mappedBy = "skills")
-    private List<Mitarbeiter> mitarbeiter = new ArrayList<>();
+	@ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                CascadeType.PERSIST,
+                CascadeType.MERGE
+            },
+            mappedBy = "skills")
+    private Set<Mitarbeiter> mitarbeiters = new HashSet<>();
 	
 
 	public Long getId_skill() {
@@ -48,14 +55,11 @@ public class Skill {
 		this.beschreibung = beschreibung;
 	}
 
-	public List<Mitarbeiter> getMitarbeiter() {
-		return mitarbeiter;
+	public Set<Mitarbeiter> getMitarbeiter() {
+		return mitarbeiters;
 	}
 
-	public void setMitarbeiter(List<Mitarbeiter> mitarbeiter) {
-		this.mitarbeiter = mitarbeiter;
-	}
-	
+
 	
 	
 }

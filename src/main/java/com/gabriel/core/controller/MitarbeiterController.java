@@ -35,18 +35,18 @@ public class MitarbeiterController {
     }
 
     @PostMapping("/new")
-    public Mitarbeiter createmitarbeiter(@Valid @RequestBody Mitarbeiter mitarbeiter) {
+    public Mitarbeiter createMitarbeiter(@Valid @RequestBody Mitarbeiter mitarbeiter) {
         return mitarbeiterRep.save(mitarbeiter);
     }
 
     @GetMapping("/list/{id}")
-    public Mitarbeiter getmitarbeiterById(@PathVariable(value = "id") Long mitarbeiterId) {
+    public Mitarbeiter getMitarbeiterById(@PathVariable(value = "id") Long mitarbeiterId) {
         return mitarbeiterRep.findById(mitarbeiterId)
                 .orElseThrow(() -> new ResourceNotFoundException("Mitarbeiter", "id", mitarbeiterId));
     }
 
     @PutMapping("/edit/{id}")
-    public Mitarbeiter updatemitarbeiter(@PathVariable(value = "id") Long mitarbeiterId,
+    public Mitarbeiter updateMitarbeiter(@PathVariable(value = "id") Long mitarbeiterId,
                                            @Valid @RequestBody Mitarbeiter mitarbeiterDetails) {
 
     	Mitarbeiter mitarbeiter = mitarbeiterRep.findById(mitarbeiterId)
@@ -54,13 +54,14 @@ public class MitarbeiterController {
 
         mitarbeiter.setVorname(mitarbeiterDetails.getVorname());
         mitarbeiter.setNachname(mitarbeiterDetails.getNachname());
+        mitarbeiter.setSkill(mitarbeiterDetails.getSkill());
         
         Mitarbeiter updatedmitarbeiter = mitarbeiterRep.save(mitarbeiter);
         return updatedmitarbeiter;
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deletemitarbeiter(@PathVariable(value = "id") Long mitarbeiterId) {
+    public ResponseEntity<?> deleteMitarbeiter(@PathVariable(value = "id") Long mitarbeiterId) {
         Mitarbeiter mitarbeiter = mitarbeiterRep.findById(mitarbeiterId)
                 .orElseThrow(() -> new ResourceNotFoundException("Note", "id", mitarbeiterId));
 
