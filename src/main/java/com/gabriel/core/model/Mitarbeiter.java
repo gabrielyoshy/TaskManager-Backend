@@ -24,10 +24,10 @@ public class Mitarbeiter {
 	private String vorname;
 	
 	@Column(name = "nachname")
-	private String nachame;
+	private String nachname;
 	
-	/*@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Skill.class)
-    private List<Skill> skills = new ArrayList<>();*/
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Skill.class)
+    private List<Skill> skills = new ArrayList<>();
 
 	public Long getId_mitarbeiter() {
 		return id_mitarbeiter;
@@ -45,21 +45,21 @@ public class Mitarbeiter {
 		this.vorname = vorname;
 	}
 
-	public String getNachame() {
-		return nachame;
+	public String getNachname() {
+		return nachname;
 	}
 
-	public void setNachame(String nachame) {
-		this.nachame = nachame;
+	public void setNachname(String nachname) {
+		this.nachname = nachname;
 	}
 
-	/*public List<Skill> getSkill() {
+	public List<Skill> getSkill() {
 		return skills;
 	}
 
 	public void setSkill(List<Skill> skills) {
 		this.skills = skills;
-	}*/
+	}
 	
 	
 

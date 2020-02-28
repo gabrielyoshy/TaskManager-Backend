@@ -1,5 +1,8 @@
 package com.gabriel.core.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
@@ -17,9 +20,9 @@ public class Skill {
 	@NotBlank
 	private String beschreibung;
 	
-	/*@ManyToMany(cascade = CascadeType.ALL, targetEntity = Mitarbeiter.class, fetch = FetchType.LAZY, mappedBy = "skills")
+	@ManyToMany(cascade = CascadeType.ALL, targetEntity = Mitarbeiter.class, fetch = FetchType.LAZY, mappedBy = "skills")
     private List<Mitarbeiter> mitarbeiter = new ArrayList<>();
-	*/
+	
 
 	public Long getId_skill() {
 		return id_skill;
@@ -45,13 +48,13 @@ public class Skill {
 		this.beschreibung = beschreibung;
 	}
 
-	/*public List<Mitarbeiter> getMitarbeiter() {
+	public List<Mitarbeiter> getMitarbeiter() {
 		return mitarbeiter;
 	}
 
 	public void setMitarbeiter(List<Mitarbeiter> mitarbeiter) {
 		this.mitarbeiter = mitarbeiter;
-	}*/
+	}
 	
 	
 	

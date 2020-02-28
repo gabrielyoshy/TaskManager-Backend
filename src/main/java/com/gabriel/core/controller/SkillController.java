@@ -30,7 +30,7 @@ public class SkillController {
 	
 
 	@GetMapping("/list")
-    public List<Skill> getAllNotes() {
+    public List<Skill> getAllSkill() {
         return skillRep.findAll();
     }
 
