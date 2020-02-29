@@ -54,7 +54,7 @@ public class ProjektController {
 
         projekt.setName(projektDetails.getName());
         projekt.setBeschreibung(projektDetails.getBeschreibung());
-        projekt.setKunde(projektDetails.getkunde());
+        projekt.setKunde(projektDetails.getKunde());
         projekt.setFruheste_stardat(projektDetails.getFruheste_stardat());
         projekt.setSpatestes_enddat(projektDetails.getSpatestes_enddat());
 

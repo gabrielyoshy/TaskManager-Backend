@@ -14,6 +14,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
 @Table(name = "Aufgabe")
 public class Aufgabe {
@@ -32,13 +40,21 @@ public class Aufgabe {
 	private int  geschatzter_aufwand;
 	
 	//Die Aufgaben können nur ein Skill haben
-	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Skill.class, fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_skill")
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_skill", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id_skill")
+    @JsonIdentityReference(alwaysAsId=true)
+    @JsonProperty("id_skill")
     private Skill skill;
 	
 	//Die Aufgaben können nur ein Projekt haben
-	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Projekt.class, fetch = FetchType.LAZY)
-	@JoinColumn(name = "id_projekt")
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_projekt", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id_projekt")
+    @JsonIdentityReference(alwaysAsId=true)
+    @JsonProperty("id_projekt")
 	private Projekt projekt; 
 	
 	public Long getId_aufgabe() {

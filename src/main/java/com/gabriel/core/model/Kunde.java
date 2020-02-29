@@ -27,10 +27,11 @@ public class Kunde {
 	@Column(name = "nachname")
 	private String nachname;
 	
-	//nur ein Kunde pro Projekt
+	/*nur ein Kunde pro Projekt
+	 * 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "kunde")
     private List<Projekt> projekteList = new ArrayList<>();
-	
+	*/
 	public Long getId_kunde() {
 		return id_kunde;
 	}
@@ -55,12 +56,12 @@ public class Kunde {
 		this.nachname = nachname;
 	}
 
-	public List<Projekt> getProjekte() {
+	/*public List<Projekt> getProjekte() {
 		return projekteList;
 	}
 
 	public void setProjekte(List<Projekt> projekteList) {
 		this.projekteList = projekteList;
-	}
+	}*/
 
 }

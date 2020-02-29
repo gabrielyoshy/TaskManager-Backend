@@ -16,10 +16,10 @@ public class Skill {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id_skill;
 	
-	@NotBlank
+	
 	private String name;
 	
-	@NotBlank
+	
 	private String beschreibung;
 	
 	/*@ManyToMany(fetch = FetchType.LAZY,

@@ -54,7 +54,6 @@ public class KundeController {
 
         kunde.setVorname(kundeDetails.getVorname());
         kunde.setNachname(kundeDetails.getNachname());
-        kunde.setProjekte(kundeDetails.getProjekte());
 
         Kunde updatedKunde = kundeRep.save(kunde);
         return updatedKunde;

@@ -1,5 +1,6 @@
 package com.gabriel.core.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -15,9 +16,17 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
 @Table(name = "Projekt")
-public class Projekt {
+public class Projekt implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -31,25 +40,29 @@ public class Projekt {
 	
 	
 	//viele Projekte können zum selben Kunden gehören
-	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Kunde.class, fetch = FetchType.LAZY)
-	@JoinColumn(name = "id_kunde")
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_kunde", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id_kunde")
+    @JsonIdentityReference(alwaysAsId=true)
+    @JsonProperty("id_kunde")
 	private Kunde kunde;
-	
+
 	@Column(name = "fruheste_stardat")
 	private Date fruheste_stardat = new Date();
 	
 	@Column(name = "spatestes_enddat")
 	private Date spatestes_enddat = new Date();
 	
-	//ein Projekt kann viele Aufgaben haben
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "projekt")
-    private List<Aufgabe> aufgaben;
+	/*//ein Projekt kann viele Aufgaben haben
+	@OneToMany( fetch = FetchType.LAZY, mappedBy = "projekt")
+    private List<Aufgabe> aufgaben;*/
 
-	public Long getId_projekte() {
+	public Long getId_projekt() {
 		return id_projekt;
 	}
 
-	public void setId_projekte(Long id_projekt) {
+	public void setId_projekt(Long id_projekt) {
 		this.id_projekt = id_projekt;
 	}
 
@@ -69,7 +82,7 @@ public class Projekt {
 		this.beschreibung = beschreibung;
 	}
 
-	public Kunde getkunde() {
+	public Kunde getKunde() {
 		return kunde;
 	}
 
@@ -92,18 +105,17 @@ public class Projekt {
 	public void setSpatestes_enddat(Date spatestes_enddat) {
 		this.spatestes_enddat = spatestes_enddat;
 	}
-
+	/*
 	public List<Aufgabe> getAufgaben() {
 		return aufgaben;
 	}
 
 	public void setAufgaben(List<Aufgabe> aufgaben) {
 		this.aufgaben = aufgaben;
-	}
-
-	public Kunde getKunde() {
-		return kunde;
-	}
+	}*/
+	
+	
+	
 
 
 	
