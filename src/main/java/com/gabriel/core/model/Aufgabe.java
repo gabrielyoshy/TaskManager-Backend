@@ -39,17 +39,17 @@ public class Aufgabe {
 	@Column(name = "geschatzter_aufwand")
 	private int  geschatzter_aufwand;
 	
-	//Die Aufgaben können nur ein Skill haben
+	/*//Die Aufgaben können nur ein Skill haben
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_skill", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id_skill")
     @JsonIdentityReference(alwaysAsId=true)
     @JsonProperty("id_skill")
-    private Skill skill;
+    private Skill skill;*/
 	
 	//Die Aufgaben können nur ein Projekt haben
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "id_projekt", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id_projekt")
@@ -89,13 +89,13 @@ public class Aufgabe {
 		this.geschatzter_aufwand = geschatzter_aufwand;
 	}
 
-	public Skill getSkill() {
+	/*public Skill getSkill() {
 		return skill;
 	}
 
 	public void setSkill(Skill skill) {
 		this.skill = skill;
-	}
+	}*/
 
 	public Projekt getProjekt() {
 		return projekt;

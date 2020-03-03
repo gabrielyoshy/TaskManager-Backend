@@ -56,7 +56,7 @@ public class AufgabeController {
         aufgabe.setName(aufgabeDetails.getName());
         aufgabe.setBeschreibung(aufgabeDetails.getBeschreibung());
         aufgabe.setGeschatzter_aufwand(aufgabeDetails.getGeschatzter_aufwand());
-        aufgabe.setSkill(aufgabeDetails.getSkill());
+        //aufgabe.setSkill(aufgabeDetails.getSkill());
         aufgabe.setProjekt(aufgabeDetails.getProjekt());
 
         Aufgabe updatedAufgabe = aufgabeRep.save(aufgabe);
