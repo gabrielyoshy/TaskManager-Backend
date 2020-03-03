@@ -40,12 +40,12 @@ public class Projekt implements Serializable {
 	
 	
 	//viele Projekte können zum selben Kunden gehören
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "id_kunde", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id_kunde")
     @JsonIdentityReference(alwaysAsId=true)
-    @JsonProperty("id_kunde")
+    @JsonProperty("kunde")
 	private Kunde kunde;
 
 	@Column(name = "fruheste_stardat")
@@ -54,9 +54,10 @@ public class Projekt implements Serializable {
 	@Column(name = "spatestes_enddat")
 	private Date spatestes_enddat = new Date();
 	
-	/*//ein Projekt kann viele Aufgaben haben
-	@OneToMany( fetch = FetchType.LAZY, mappedBy = "projekt")
-    private List<Aufgabe> aufgaben;*/
+	//ein Projekt kann viele Aufgaben haben
+	@OneToMany( fetch = FetchType.EAGER)
+	@JoinColumn(name="id_projekt")
+    private List<Aufgabe> aufgaben;
 
 	public Long getId_projekt() {
 		return id_projekt;

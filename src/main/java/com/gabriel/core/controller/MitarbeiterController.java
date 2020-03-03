@@ -20,7 +20,7 @@ import java.util.List;
  * Despues cambiar lo de abajo para que ande la conexion con angular
  */
 
-//@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping({"/mitarbeiter"})
 public class MitarbeiterController {
