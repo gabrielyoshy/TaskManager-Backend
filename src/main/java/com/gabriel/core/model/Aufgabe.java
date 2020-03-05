@@ -3,6 +3,8 @@ package com.gabriel.core.model;
 
 
 
+import java.util.Date;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,20 +35,26 @@ public class Aufgabe {
 	@Column(name = "name")
 	private String name;
 	
-	@Column(name = "beschreibung")
+	@Column(name = "beschreibung" , columnDefinition = "LONGBLOB")
 	private String beschreibung;
 	
 	@Column(name = "geschatzter_aufwand")
 	private int  geschatzter_aufwand;
 	
-	/*//Die Aufgaben können nur ein Skill haben
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@Column(name = "beginnt")
+	private Date beginnt = new Date();
+	
+	@Column(name = "endet ")
+	private Date endet  = new Date();
+	
+	///Die Aufgaben können nur ein Skill haben
+	@ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "id_skill", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id_skill")
     @JsonIdentityReference(alwaysAsId=true)
-    @JsonProperty("id_skill")
-    private Skill skill;*/
+    @JsonProperty("skill")
+    private Skill skill;
 	
 	//Die Aufgaben können nur ein Projekt haben
 	@ManyToOne(fetch = FetchType.EAGER, optional = false)
@@ -54,7 +62,7 @@ public class Aufgabe {
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id_projekt")
     @JsonIdentityReference(alwaysAsId=true)
-    @JsonProperty("id_projekt")
+    @JsonProperty("projekt")
 	private Projekt projekt; 
 	
 	public Long getId_aufgabe() {
@@ -89,13 +97,29 @@ public class Aufgabe {
 		this.geschatzter_aufwand = geschatzter_aufwand;
 	}
 
-	/*public Skill getSkill() {
+	public Skill getSkill() {
 		return skill;
+	}
+
+	public Date getBeginnt() {
+		return beginnt;
+	}
+
+	public void setBeginnt(Date beginnt) {
+		this.beginnt = beginnt;
+	}
+
+	public Date getEndet() {
+		return endet;
+	}
+
+	public void setEndet(Date endet) {
+		this.endet = endet;
 	}
 
 	public void setSkill(Skill skill) {
 		this.skill = skill;
-	}*/
+	}
 
 	public Projekt getProjekt() {
 		return projekt;

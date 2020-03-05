@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -35,7 +36,8 @@ public class Projekt implements Serializable {
 	@Column(name = "name")
 	private String name;
 	
-	@Column(name = "beschreibung")
+	
+	@Column(name = "beschreibung", columnDefinition = "LONGBLOB" )
 	private String beschreibung;
 	
 	
@@ -56,6 +58,7 @@ public class Projekt implements Serializable {
 	
 	//ein Projekt kann viele Aufgaben haben
 	@OneToMany( fetch = FetchType.EAGER)
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JoinColumn(name="id_projekt")
     private List<Aufgabe> aufgaben;
 
