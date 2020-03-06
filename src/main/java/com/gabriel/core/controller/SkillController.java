@@ -54,6 +54,8 @@ public class SkillController {
 
         skill.setName(skillDetails.getName());
         skill.setBeschreibung(skillDetails.getBeschreibung());
+        skill.setLevel(skillDetails.getLevel());
+        skill.setImage(skillDetails.getImage());
 
         Skill updatedSkill = skillRep.save(skill);
         return updatedSkill;
