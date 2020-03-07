@@ -49,7 +49,7 @@ public class Aufgabe {
 	
 	///Die Aufgaben können nur ein Skill haben
 	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "id_skill")
+    @JoinColumn(name = "id_skill", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id_skill")
     @JsonIdentityReference(alwaysAsId=true)

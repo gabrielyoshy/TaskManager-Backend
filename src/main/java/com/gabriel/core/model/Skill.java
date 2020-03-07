@@ -16,17 +16,11 @@ public class Skill {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id_skill;
 	
-	@Column(name = "name")
+	
 	private String name;
 	
-	@Column(name = "beschreibung")
+	
 	private String beschreibung;
-	
-	@Column(name = "level")
-	private String level;
-	
-	@Column(name = "image")
-	private String image;
 	
 	/*@ManyToMany(fetch = FetchType.LAZY,
             cascade = {
@@ -39,22 +33,6 @@ public class Skill {
 
 	public Long getId_skill() {
 		return id_skill;
-	}
-
-	public String getLevel() {
-		return level;
-	}
-
-	public void setLevel(String level) {
-		this.level = level;
-	}
-
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
 	}
 
 	public void setId_skill(Long id_skill) {
