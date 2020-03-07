@@ -30,6 +30,9 @@ public class Mitarbeiter implements Serializable {
 	@Column(name = "nachname")
 	private String nachname;
 	
+	@Column(name = "image")
+	private String image;
+	
 	@ManyToMany(fetch = FetchType.LAZY)
     private Set<Skill> skills = new HashSet<>();
 
