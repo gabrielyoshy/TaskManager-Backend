@@ -28,13 +28,8 @@ public class Skill {
 	@Column(name = "image")
 	private String image;
 	
-	/*@ManyToMany(fetch = FetchType.LAZY,
-            cascade = {
-                CascadeType.PERSIST,
-                CascadeType.MERGE
-            },
-            mappedBy = "skills")
-    private Set<Mitarbeiter> mitarbeiters = new HashSet<>();*/
+	 @ManyToMany(mappedBy = "skill")
+    private Set<Mitarbeiter> mitarbeiters;
 	
 
 	public Long getId_skill() {

@@ -30,8 +30,11 @@ public class Mitarbeiter implements Serializable {
 	@Column(name = "nachname")
 	private String nachname;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
-    private Set<Skill> skills = new HashSet<>();
+	@Column(name = "image")
+	private String image;
+	
+	@ManyToMany(fetch = FetchType.EAGER)
+    private Set<Skill> skill ;
 
 	public Long getId_mitarbeiter() {
 		return id_mitarbeiter;
@@ -57,13 +60,26 @@ public class Mitarbeiter implements Serializable {
 		this.nachname = nachname;
 	}
 
-	public Set<Skill> getSkill() {
-		return skills;
+	
+
+	public String getImage() {
+		return image;
 	}
 
-	public void setSkill(Set<Skill> skills) {
-		this.skills = skills;
+	public void setImage(String image) {
+		this.image = image;
 	}
+
+	public Set<Skill> getSkill() {
+		return skill;
+	}
+
+	public void setSkill(Set<Skill> skill) {
+		this.skill = skill;
+	}
+
+
+	
 	
 	
 
