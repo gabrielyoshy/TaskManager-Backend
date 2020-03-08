@@ -54,6 +54,7 @@ public class MitarbeiterController {
 
         mitarbeiter.setVorname(mitarbeiterDetails.getVorname());
         mitarbeiter.setNachname(mitarbeiterDetails.getNachname());
+        mitarbeiter.setImage(mitarbeiterDetails.getImage());
         mitarbeiter.setSkill(mitarbeiterDetails.getSkill());
         
         Mitarbeiter updatedmitarbeiter = mitarbeiterRep.save(mitarbeiter);
