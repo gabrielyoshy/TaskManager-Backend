@@ -6,7 +6,7 @@ The database used is [MySql](https://www.mysql.com/) and to start the project it
 
 ## Installation
 
-To run this application it is necessary to open a terminal and execute the following:  
+To run this application it is necessary the following:  
 
 ### update aplication.properties (DataSourceAutoConfiguration & DataSourceProperties)
 
