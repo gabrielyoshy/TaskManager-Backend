@@ -9,10 +9,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.gabriel.core.exception.ResourceNotFoundException;
+import com.gabriel.core.model.Aufgabe_mitarbeiter;
 import com.gabriel.core.model.Mitarbeiter;
 import com.gabriel.core.repository.MitarbeiterRep;
 
 import javax.validation.Valid;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -44,6 +49,22 @@ public class MitarbeiterController {
         return mitarbeiterRep.findById(mitarbeiterId)
                 .orElseThrow(() -> new ResourceNotFoundException("Mitarbeiter", "id", mitarbeiterId));
     }
+    
+    @GetMapping("/list/verfugbar/{ab}/{bis}/{id_skill}")
+    public List<Mitarbeiter> mitarbeiterVerfugbar(@PathVariable(value = "ab") String s_ab,
+    												@PathVariable(value = "bis") String s_bis,
+    													@PathVariable(value = "id_skill") int id_skill) throws ParseException{
+    	
+    	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		
+		Date ab = sdf.parse(s_ab);
+		Date bis = sdf.parse(s_bis);
+    	
+    	List<Mitarbeiter> result = mitarbeiterRep.findAllVerfugbar(ab, bis, id_skill);
+    	return result;
+    	
+    }
+    
 
     @PutMapping("/edit/{id}")
     public Mitarbeiter updateMitarbeiter(@PathVariable(value = "id") Long mitarbeiterId,
@@ -70,5 +91,8 @@ public class MitarbeiterController {
 
         return ResponseEntity.ok().build();
     }
+    
+    
+    
 
 }
